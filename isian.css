@@ -1,0 +1,241 @@
+/* Custom Styles for MineTrader Pro */
+:root {
+    --mainColor: crimson;
+    --white: #FFFFFF;
+    --whiteSmoke: #C4C3CA;
+    --grey: #393E46;   
+    --black: #222831;     
+    --white: #FFFFFF;     
+    --dc:  #948979;     
+    --beiege: #DFD0B8;
+    --navy: #27445D;
+    --green: #497D74;
+    --shadow: 0px 4px 8px 0 rgba(21, 21, 21, .2);
+}
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+/* Background gradient animation */
+body {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glassmorphism effects */
+.backdrop-filter {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Custom animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Card hover effects */
+.hover-card-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-card-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.1);
+}
+
+/* Active navigation item */
+.active-nav-item {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #fff;
+  border-left: 3px solid #10b981;
+}
+
+/* Custom button styles */
+.btn-emerald {
+  background: linear-gradient(to right, #059669, #10b981);
+  transition: all 0.3s ease;
+}
+
+.btn-emerald:hover {
+  background: linear-gradient(to right, #047857, #059669);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+/* Chart tooltip styling */
+.chart-tooltip {
+  background-color: rgba(31, 41, 55, 0.9);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #f9fafb;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Table row hover animation */
+.table-row-hover {
+  transition: background-color 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(55, 65, 81, 0.7);
+}
+
+/* Custom toggle switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4b5563;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #10b981;
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px #10b981;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* Modal animations */
+.modal-animation {
+  animation: modalFade 0.3s ease;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50%;
+  border-top-color: #10b981;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Notification badge animation */
+@keyframes notify {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.notification-badge {
+  animation: notify 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mobile menu animation */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.mobile-menu-exit {
+  opacity: 1;
+}
+
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}
+                                           

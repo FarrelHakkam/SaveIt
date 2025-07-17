@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Save It</title>
+  <link rel="stylesheet" href="HistoryPage.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <nav id="navbar" class="bg-gray-800 bg-opacity-90 backdrop-filter backdrop-blur-lg border-b border-gray-700 fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <i class="fas fa-gem text-emerald-400 mr-2 text-xl"></i>
+            <span class="text-xl font-bold text-white">SaveIt</span>
+          </div>
+          <div class="hidden md:ml-6 md:flex md:space-x-4">
+            <a href="#" class="text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pembukuan</a>
+            <a href="#" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Wallet</a>
+            <a href="#" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+           
+            </button>
+          </div>
+          <div class="ml-3 relative hidden" id="userMenuContainer">
+            <div>
+              <button id="userMenuBtn" class="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                <span class="sr-only">Open user menu</span>
+                <div class="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center">
+                  <i class="fas fa-user text-emerald-400"></i>
+                </div>
+              </button>
+            </div>
+            <div id="userMenu" class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Your Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Sign out</a>
+            </div>
+          </div>
+          <div class="ml-3 md:hidden">
+            <button id="mobileMenuBtn" class="text-gray-400 hover:text-white focus:outline-none focus:text-white">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#" class="text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+        <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pembukuan</a>
+        <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Wallet</a>
+        <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="showSection('daily', this)">Daily</button>
+      <button class="filter-btn" onclick="showSection('weekly', this)">Weekly</button>
+      <button class="filter-btn" onclick="showSection('monthly', this)">Monthly</button>
+      <input type="text" class="search-box" placeholder="Search" />
+    </div>
+
+    <!-- Daily Section -->
+    <section class="history-section active" id="daily">
+      <div class="history-box">
+        <div class="history-item"><span>PENGELUARAN 1</span><span>PRICE</span></div>
+        <div class="history-item"><span>PENGELUARAN 2</span><span>PRICE</span></div>
+        <div class="history-item"><span>PENGELUARAN 3</span><span>PRICE</span></div>
+        <div class="history-item"><span>PENGELUARAN 4</span><span>PRICE</span></div>
+        <hr class="divider" />
+        <div class="history-item"><span>TOTAL</span><span>PRICE</span></div>
+      </div>
+    </section>
+
+    <!-- Weekly Section -->
+    <section class="history-section" id="weekly">
+      <div class="grid-layout">
+        <div class="chart-box">
+          <img src="History weekly.png" alt="Weekly Chart" class="chart-img" />
+        </div>
+        <div class="summary-box">
+          <div class="history-item"><span>WEEK 1</span><span>PRICE</span></div>
+          <div class="history-item"><span>WEEK 2</span><span>PRICE</span></div>
+          <div class="history-item"><span>WEEK 3</span><span>PRICE</span></div>
+          <div class="history-item"><span>WEEK 4</span><span>PRICE</span></div>
+          <hr class="divider" />
+          <div class="history-item"><span>TOTAL</span><span>PRICE</span></div>
+        </div>
+        <div class="desc-box">
+          <p>Menampilkan harga barang (total) apa yang paling mahal</p>
+          <p>cth: makanan = Rp 200.000,00</p>
+          <p>&emsp;&emsp;Expense = Rp 67.000,00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monthly Section -->
+    <section class="history-section" id="monthly">
+      <div class="grid-layout">
+        <div class="chart-box">
+          <img src="History monthly.png" alt="Monthly Chart" class="chart-img" />
+        </div>
+        <div class="summary-box">
+          <div class="history-item"><span>HARI 1</span><span>PRICE</span></div>
+          <div class="history-item"><span>HARI 2</span><span>PRICE</span></div>
+          <div class="history-item"><span>HARI 3</span><span>PRICE</span></div>
+          <div class="history-item"><span>HARI 4</span><span>PRICE</span></div>
+          <hr class="divider" />
+          <div class="history-item"><span>TOTAL</span><span>PRICE</span></div>
+        </div>
+        <div class="desc-box">
+          <p>Menampilkan harga barang (total) apa yang paling mahal</p>
+          <p>cth: makanan = Rp 200.000,00</p>
+          <p>&emsp;&emsp;Expense = Rp 67.000,00</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showSection(id, button) {
+      document.querySelectorAll('.history-section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+  </script>
+</body>
+</html>

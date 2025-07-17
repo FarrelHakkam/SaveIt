@@ -1,0 +1,103 @@
+/* Reset and background */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1f2937;
+  color: white;
+}
+
+/* Main layout */
+main {
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  color: #1f2937;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #1f2937;
+  color: white;
+  border: 1px solid white;
+}
+
+.search-box {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+/* Section Control */
+.history-section {
+  display: none;
+}
+
+.history-section.active {
+  display: block;
+}
+
+/* Daily Box */
+.history-box {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 700px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Weekly/Monthly Layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.chart-box,
+.summary-box,
+.desc-box {
+  background-color: white;
+  border-radius: 20px;
+  color: #000;
+  padding: 20px;
+}
+
+.chart-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.desc-box {
+  grid-column: span 2;
+}

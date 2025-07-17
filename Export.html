@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Export Data - SaveIt</title>
+  <link rel="stylesheet" href="Export.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Export Data</h1>
+    <div id="dataContent" class="data-box">
+      <h2>Data Keuangan</h2>
+      <table>
+        <tr><th>Pengeluaran</th><th>Jumlah</th><th>Metode</th></tr>
+        <tr><td>Beli Tank</td><td>Rp 100.000</td><td>QRIS</td></tr>
+        <tr><td>Beli Bulldoser</td><td>Rp 250.000</td><td>Bank</td></tr>
+        <tr><td>Beli Roket fufufafa</td><td>Rp 300.000</td><td>E-Wallet</td></tr>
+      </table>
+    </div>
+
+    <div class="btn-group">
+      <button onclick="exportPDF()">Export to PDF</button>
+      <button onclick="exportJPG()">Export to JPG</button>
+      <button onclick="exportWord()">Export to Word</button>
+      <button onclick="exportExcel()">Export to Excel</button>
+    </div>
+  </div>
+  <script src="Export.js"></script>
+</body>
+</html>

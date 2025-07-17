@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit - SaveIt</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="DepositPage.css">
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen flex flex-col items-center p-6">
+  <h1 class="text-3xl font-bold text-emerald-400 mb-6">Deposit ke SaveIt</h1>
+  <span class="text-sm text-gray-400 mb-4">Deposit</span>
+
+  <form id="depositForm" class="bg-gray-800 p-6 rounded-lg w-full max-w-md shadow-md">
+    <div class="mb-4">
+      <label for="depositName" class="block text-sm font-medium mb-1">Nama:</label>
+      <input type="text" id="depositName" class="w-full p-2 rounded bg-gray-700 border border-gray-600 text-white" required>
+    </div>
+    <div class="mb-4">
+      <label for="depositAmount" class="block text-sm font-medium mb-1">Jumlah Deposit (Rp):</label>
+      <input type="number" id="depositAmount" class="w-full p-2 rounded bg-gray-700 border border-gray-600 text-white" required>
+    </div>
+    <div class="mb-4">
+      <label for="paymentMethod" class="block text-sm font-medium mb-1">Metode Pembayaran:</label>
+      <select id="paymentMethod" class="w-full p-2 rounded bg-gray-700 border border-gray-600 text-white" required>
+        <option value="QRIS">QRIS</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+        <option value="E-Wallet">E-Wallet</option>
+      </select>
+    </div>
+
+    <div id="methodDetail" class="mb-4 hidden">
+      <div id="qrisSection" class="hidden qris-overlay">
+        <label class="block text-sm font-medium mb-2">Scan QR:</label>
+        <div class="qris-container">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://saveit.app/deposit" alt="QRIS Code" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+
+      <div id="bankSection" class="hidden">
+        <label class="block text-sm font-medium mb-1">Virtual Account:</label>
+        <div class="bg-gray-700 p-3 rounded text-green-400 font-mono select-all">1234 5678 9123 4567</div>
+        <p class="text-sm text-gray-400 mt-2">Bank: BCA (PT SaveIt Indonesia)</p>
+      </div>
+
+      <div id="ewalletSection" class="hidden">
+        <label class="block text-sm font-medium mb-1">Nomor E-Wallet:</label>
+        <div class="bg-gray-700 p-3 rounded text-green-400 font-mono select-all">0857-1234-5678</div>
+        <p class="text-sm text-gray-400 mt-2">Nama: SaveIt Wallet</p>
+      </div>
+    </div>
+
+    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded mb-2">Simpan</button>
+    <a href="isian.html" class="block text-center w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Selesai</a>
+  </form>
+
+  <div id="depositList" class="mt-8 w-full max-w-md"></div>
+
+  <script src="DepositPage.js"></script>
+</body>
+</html>
